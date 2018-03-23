@@ -11,12 +11,8 @@ import { matchPath } from './chunk2.js';
 class RouteLink {
     constructor() {
         this.unsubscribe = () => { return; };
-        this.activeClass = 'link-active';
         this.exact = false;
-        /**
-         *  Custom tag to use instead of an anchor
-         */
-        this.custom = 'a';
+        this.activeClass = 'link-active';
         this.match = null;
     }
     // Identify if the current route is a match.
@@ -66,20 +62,20 @@ class RouteLink {
         return root + url;
     }
     render() {
-        let anchorAttributes = {
-            class: {
-                [this.activeClass]: this.match !== null
-            },
-            onClick: this.handleClick.bind(this)
+        const classes = {
+            [this.activeClass]: this.match !== null
         };
-        if (this.custom === 'a') {
-            anchorAttributes = Object.assign({}, anchorAttributes, { href: this.url, title: this.anchorTitle, role: this.anchorRole, tabindex: this.anchorTabIndex });
+        if (this.custom) {
+            return (h(this.custom, { class: classes, onClick: this.handleClick.bind(this) },
+                h("slot", null)));
         }
-        return (h(this.custom, Object.assign({}, anchorAttributes),
-            h("slot", null)));
+        else {
+            return (h("a", { class: classes, href: this.url, onClick: this.handleClick.bind(this) },
+                h("slot", null)));
+        }
     }
     static get is() { return "stencil-route-link"; }
-    static get properties() { return { "activeClass": { "type": String, "attr": "active-class" }, "activeRouter": { "context": "activeRouter" }, "anchorRole": { "type": String, "attr": "anchor-role" }, "anchorTabIndex": { "type": String, "attr": "anchor-tab-index" }, "anchorTitle": { "type": String, "attr": "anchor-title" }, "custom": { "type": String, "attr": "custom" }, "exact": { "type": Boolean, "attr": "exact" }, "match": { "state": true }, "url": { "type": String, "attr": "url" }, "urlMatch": { "type": "Any", "attr": "url-match" } }; }
+    static get properties() { return { "activeClass": { "type": String, "attr": "active-class" }, "activeRouter": { "context": "activeRouter" }, "custom": { "type": String, "attr": "custom" }, "exact": { "type": Boolean, "attr": "exact" }, "location": { "context": "location" }, "match": { "state": true }, "url": { "type": String, "attr": "url" }, "urlMatch": { "type": "Any", "attr": "url-match" } }; }
 }
 
 export { RouteLink as StencilRouteLink };

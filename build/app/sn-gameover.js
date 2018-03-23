@@ -20,9 +20,6 @@ class SnGameover {
                     h("stencil-route-link", { url: '/game' },
                         h("button", null, "Try again"))),
                 h("div", { class: "menu-item" },
-                    h("stencil-route-link", { url: '/highscore' },
-                        h("button", null, "Highscore"))),
-                h("div", { class: "menu-item" },
                     h("stencil-route-link", { url: "/" },
                         h("button", null, "Back to menu"))))));
     }

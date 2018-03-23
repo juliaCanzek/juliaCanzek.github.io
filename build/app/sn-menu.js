@@ -11,7 +11,7 @@ class SimonMenu {
                     h("stencil-route-link", { url: "/game" },
                         h("button", null, "Start game"))),
                 h("div", { class: "menu-item" },
-                    h("stencil-route-link", { url: "" },
+                    h("stencil-route-link", { url: "/highscore" },
                         h("button", null, "Highscores"))))));
     }
     static get is() { return "sn-menu"; }
