@@ -1,0 +1,15 @@
+{
+  "name": "Simon Game",
+  "short_name": "Simon",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#091456",
+  "theme_color": "#091456",
+  "orientation": "portrait",
+  "description": "Play Simon game to train your memory. The game will display which color you should recognize and then it's yout turn to show that you recognized it.",
+  "icons": [{
+    "src": "assets/icon/icon_simon.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }]
+}
