@@ -1,0 +1,15 @@
+{
+    "name": "Geo Game",
+    "short_name": "Geo",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#008B8B",
+    "theme_color": "#008B8B",
+    "orientation": "portrait",
+    "description": "Play this Geo Game and save cats.",
+    "icons": [{
+      "src": "img/icon_geo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }]
+  }
