@@ -1,4 +1,4 @@
-var bounds = L.latLngBounds([47.5836, 12.17], [47.583, 12.175], 16);             //Koordinaten von Kufstein
+var bounds = L.latLngBounds([47.5836, 12.17], [47.583, 12.175], 17);             //Koordinaten von Kufstein
 var mymap = L.map('mapid').fitBounds(bounds);
 //mymap.setView([2, 2], 2);
 mymap.setZoom(17);
@@ -46,9 +46,9 @@ mymap.addLayer(leafletMap);
 
 var destCoord = [                                                                               //destination markers
     [47.583857, 12.173269],
-    [47.583857, 12.173679],
-    [47.583707, 12.173279],
-    [47.583707, 12.173679],
+    [47.584180, 12.173996],
+    [47.583154, 12.173565],
+    [47.583155, 12.172056],
     [47.5836, 12.1724]];               
 var destMarker1 = L.marker(destCoord[0], {icon: toDoIcon}).bindPopup("Rette mich, Mario!").addTo(mymap);
 var destMarker2 = L.marker(destCoord[1], {icon: toDoIcon}).bindPopup("Rette mich, Mario!").addTo(mymap);
@@ -162,7 +162,7 @@ if (!navigator.geolocation){
   }
     
 	function getPosition(){
-        mymap.locate({setView: true, maxZoom: 16});
+        mymap.locate({setView: true, maxZoom: 17});
     }
 	
     setInterval(getPosition, 20000);
