@@ -9,6 +9,7 @@ var cacheFiles = [
     'map.js',
     'sw.js',
     'img/favicon.ico',
+    'img/icon-geo.ico',
     'img/hook.png',
     'img/icon_geo.png',
     'img/icon.png',
