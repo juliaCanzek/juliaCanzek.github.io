@@ -1,5 +1,7 @@
-var bounds = L.latLngBounds([47.5836, 12.17], [47.583, 12.175], 16)             //Koordinaten von Kufstein
+var bounds = L.latLngBounds([47.5836, 12.17], [47.583, 12.175], 16);             //Koordinaten von Kufstein
 var mymap = L.map('mapid').fitBounds(bounds);
+//mymap.setView([2, 2], 2);
+mymap.setZoom(18);
 
 /*Kein Zoom und auf Karte begrenzen */
 mymap.touchZoom.disable();
@@ -8,6 +10,8 @@ mymap.scrollWheelZoom.disable();
 mymap.boxZoom.disable();
 mymap.removeControl(mymap.zoomControl);
 mymap.scrollWheelZoom.disable();
+mymap.touchZoom.disable();
+mymap.dragging.disable();
 
 
 
